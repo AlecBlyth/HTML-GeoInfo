@@ -1,0 +1,130 @@
+
+
+<HEAD>
+
+<style type="text/css">
+<!--
+.bgclr {background-color: white; color: black; font-weight: bold;}
+.head {
+}
+-->
+</style>
+<link href="../styles/GI.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+
+var numQues = 6;
+var numChoi = 3;
+var answers = new Array(6);
+
+
+answers[0] = "New Delhi";
+answers[1] = "Indian Rupee";
+answers[2] = "The British Empire";
+answers[3] = "1947";
+answers[4] = "Billion";
+answers[5] = "Tea";
+
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+          break;
+        }
+      }
+    }
+  }
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+}
+
+</script>
+
+</HEAD>
+
+<BODY class="body">
+
+<h3 class="heading">India Quiz</h3>
+<p><center><img src="../Images/India-coor-locator.png" alt="" width="304" height="258"/></center></p>
+
+<form name="quiz" class="quiz">
+1. What is the Capital of India?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Mumbai">Mumbai</li>
+  <li><input type="radio" name="q1" value="Bangkok">Bangkok</li>
+  <li><input type="radio" name="q1" value="New Delhi">New Delhi</li>
+</ul>
+
+2. What is India's currency?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="Indian Dong">Indian Dong</li>
+  <li><input type="radio" name="q2" value="Indian Rupee">Indian Rupee</li>
+  <li><input type="radio" name="q2" value="Indian Dollar">Indian Dollar</li>
+</ul>
+3. Who ruled over India?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="The British Empire">The British Empire</li>
+  <li><input type="radio" name="q3" value="French">The French Empire</li>
+  <li><input type="radio" name="q3" value="Japan">Imperial Japan</li>
+</ul>
+4. When did British Raj end?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="1898">1898</li>
+  <li><input type="radio" name="q4" value="1993">1993</li>
+  <li><input type="radio" name="q4" value="1947">1947</li>
+</ul>
+
+5. What is the population of India?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q5" value="Billion">1.2 Billion</li>
+  <li><input type="radio" name="q5" value="Million">20 Million</li>
+  <li><input type="radio" name="q5" value="Million2">350 Million</li>
+</ul>
+
+6. What did the British East India Company famously trade?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q6" value="Tea">Tea</li>
+  <li><input type="radio" name="q6" value="Slaves">Slaves</li>
+  <li><input type="radio" name="q6" value="Top Hats">Top Hats</li>
+</ul>
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+Correct answers:<br>
+<textarea class="bgclr" name="solutions" wrap="virtual" rows="4" cols="30" disabled>
+</textarea>
+</form>
+
+
+
+
+<p><center>
+  <p><img src="../Images/quiztab.png" alt="" width="440" height="60" usemap="#Map" border="0"/>
+    <map name="Map"><area shape="rect" coords="220,1,438,63" href="Indiainfo.html">
+      <area shape="rect" coords="3,1,221,63" href="indiacurrency.html">
+    </map>
+    <map name="Map">
+      <area shape="rect" coords="220,-1,438,61" href="#">
+    </map>
+  </p>
+  <p><a href="India.html">Back</a></p>
+  <p><img src="../Images/menu2.png" alt="" width="584" height="162" usemap="#Map2" border="0"/>
+    <map name="Map2">
+      <area shape="rect" coords="26,15,260,148" href="belarus.html">
+      <area shape="rect" coords="343,14,574,146" href="Tonga.html">
+    </map>
+  </p>
+</center></p>

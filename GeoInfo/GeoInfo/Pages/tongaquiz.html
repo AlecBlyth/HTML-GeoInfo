@@ -1,0 +1,124 @@
+
+
+<HEAD>
+
+<style type="text/css">
+<!--
+.bgclr {background-color: white; color: black; font-weight: bold;}
+.head {
+}
+-->
+</style>
+<link href="../styles/GI.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+
+var numQues = 6;
+var numChoi = 3;
+var answers = new Array(6);
+
+
+answers[0] = "Nuku'alofa";
+answers[1] = "Tongan Pa'anga";
+answers[2] = "Tongan Monarchy";
+answers[3] = "2010";
+answers[4] = "Archipelago";
+answers[5] = "Polynesia";
+
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+          break;
+        }
+      }
+    }
+  }
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+}
+
+</script>
+
+</HEAD>
+
+<BODY class="body">
+
+<h3 class="heading">Tonga Quiz</h3>
+<p><center>
+  <img src="../Images/tonga.png" width="285" height="147" alt=""/>
+</center></p>
+
+<form name="quiz" class="quiz">
+1. What is the Capital of Tonga?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Nuku'alofa">Nuku'alofa</li>
+  <li><input type="radio" name="q1" value="Saigon">Saigon</li>
+  <li><input type="radio" name="q1" value="Seoul">Seoul</li>
+</ul>
+
+2. What is Tonga's currency?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="Yen">Tongan Yen</li>
+  <li><input type="radio" name="q2" value="Dollar">Tongan Dollar</li>
+  <li><input type="radio" name="q2" value="Tongan Pa'anga">Tongan Pa'anga</li>
+</ul>
+3. Who ruled over Tonga?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="The British Empire">The British Empire</li>
+  <li><input type="radio" name="q3" value="Japan">Imperial Japan</li>
+  <li><input type="radio" name="q3" value="Tongan Monarchy">Tongan Monarchy</li>
+</ul>
+4. When did Tonga become a constitutional monarchy?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="2010">2010</li>
+  <li><input type="radio" name="q4" value="1970">1970</li>
+  <li><input type="radio" name="q4" value="1776">1776</li>
+</ul>
+
+5. What kind of nation is Tonga?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q5" value="Archipelago">Archipelago</li>
+  <li><input type="radio" name="q5" value="Island">Single Island</li>
+  <li><input type="radio" name="q5" value="Landlock">Continental</li>
+</ul>
+
+6. Where is Tonga?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q6" value="Americas">Americas</li>
+  <li><input type="radio" name="q6" value="Asia">Asia</li>
+  <li><input type="radio" name="q6" value="Polynesia">Polynesia</li>
+</ul>
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+Correct answers:<br>
+<textarea class="bgclr" name="solutions" wrap="virtual" rows="4" cols="30" disabled></textarea>
+</form>
+<p><center><img src="../Images/quiztab.png" alt="" width="440" height="60" usemap="#Map" border="0"/>
+    <map name="Map"><area shape="rect" coords="220,2,438,67" href="tongainfo.html">
+      <area shape="rect" coords="3,-1,221,64" href="Tongacurrency.html">
+    </map>
+</center></p>
+<p><center>
+  <a href="Tonga.html">Back</a>
+</center></p>
+<p><center><img src="../Images/menu3.png" alt="" width="586" height="172" usemap="#Map2" border="0"/>
+    <map name="Map2">
+      <area shape="rect" coords="27,21,250,142" href="India.html">
+      <area shape="rect" coords="336,13,563,145" href="belarus.html">
+    </map>
+</center></p>

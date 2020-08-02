@@ -1,0 +1,47 @@
+@charset "utf-8";
+.intro {
+}
+.welcome {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bolder;
+	font-size: large;
+}
+.menu {
+}
+.body {
+	background-image: url(../Images/background.jpg);
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bold;
+	background-size: cover;
+	background-attachment: scroll;
+}
+.Title {
+	text-align: center;
+	font-size: xx-large;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bolder;
+}
+.Info {
+}
+.title {
+}
+.heading {
+	text-align: center;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+.quiz {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: normal;
+
+}
+.map {
+
+}
+.Infotitle {
+	text-align: center;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-style: oblique;
+	font-weight: bolder;
+	font-size: x-large;
+
+}
